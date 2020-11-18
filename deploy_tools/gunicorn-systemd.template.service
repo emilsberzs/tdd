@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=emils
+WorkingDirectory=/home/emils/sites/DOMAIN
+EnvironmentFile=/home/emils/sites/DOMAIN/.env
+
+ExecStart=/home/emils/sites/DOMAIN/virtualenv/bin/gunicorn --bind unix:/tmp/staging.emilsberzs.com.socket sup$
+[Install]
+WantedBy=multi-user.target
