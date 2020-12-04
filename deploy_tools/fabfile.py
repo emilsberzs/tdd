@@ -41,7 +41,7 @@ def _create_or_update_dotenv():
             'abcdefghijklmnoprstuvwyz123456789', k=50))
         append('.env', f'DJANGO_SECRET_KEY={new_secret}')
     email_password = os.environ['EMAIL_PASSWORD']
-    append('.env', f'EMAIL_PASSWORD={email_password}')
+    append('.env', f'EMAIL_PASSWORD')
 
 
 def _update_static_files():
